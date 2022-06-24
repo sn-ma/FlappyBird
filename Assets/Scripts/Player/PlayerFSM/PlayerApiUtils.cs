@@ -17,7 +17,7 @@ namespace FlappyBirdClone.Player.FSM
         public static void CleanRotationAndVelocityOnFinish(IPlayerApi playerApi)
         {
             playerApi.rigidbody2d.rotation = 0f;
-            playerApi.rigidbody2d.velocity = new Vector2(playerApi.xVelocity, 0f);
+            playerApi.rigidbody2d.velocity = new Vector2(playerApi.xGoalVelocity, 0f);
         }
 
         public static void ApplyGravity(IPlayerApi playerApi, float deltaTime)
@@ -32,7 +32,12 @@ namespace FlappyBirdClone.Player.FSM
 
         public static void AccelerateToGoalXVelocity(IPlayerApi playerApi, float deltaTime)
         {
-            playerApi.rigidbody2d.velocity = new Vector2(playerApi.xVelocity, playerApi.rigidbody2d.velocity.y);
+            if (playerApi.rigidbody2d.velocity.x < playerApi.xGoalVelocity)
+            {
+                Vector2 velocity = playerApi.rigidbody2d.velocity;
+                velocity.x = Mathf.Min(velocity.x + playerApi.xAcceleration * deltaTime / playerApi.rigidbody2d.mass, playerApi.xGoalVelocity);
+                playerApi.rigidbody2d.velocity = velocity;
+            }
         }
 
         public static bool IsPlayerStopped(IPlayerApi playerApi)

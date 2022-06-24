@@ -29,7 +29,7 @@ namespace FlappyBirdClone
             Vector3 position = transform.position;
             position.x = target.position.x + shift;
             transform.position = position;
-            currentVelocity = playerController.xVelocity;
+            currentVelocity = playerController.xGoalVelocity;
         }
 
         private void Update()

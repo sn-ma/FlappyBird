@@ -11,7 +11,9 @@ namespace FlappyBirdClone.Player
         [SerializeField]
         private float downForce;
         [SerializeField]
-        public float xVelocity;
+        public float xGoalVelocity;
+        [SerializeField]
+        public float xMaxForce;
         [SerializeField]
         private float delayBeforeExitOnWin;
         [SerializeField]
@@ -87,7 +89,8 @@ namespace FlappyBirdClone.Player
             // Stored in the PlayerController:
             public float upForce { get => playerController.upForce; }
             public float downForce { get => playerController.downForce; }
-            public float xVelocity { get => playerController.xVelocity; }
+            public float xGoalVelocity { get => playerController.xGoalVelocity; }
+            public float xAcceleration { get => playerController.xMaxForce; }
             public float delayBeforeExitOnWin { get => playerController.delayBeforeExitOnWin; }
             public float delayBeforeExitOnLoose { get => playerController.delayBeforeExitOnLoose; }
             public Rigidbody2D rigidbody2d { get => playerController.rigidbody2d; }

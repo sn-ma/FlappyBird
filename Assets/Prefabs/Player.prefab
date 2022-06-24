@@ -124,7 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upForce: 100
   downForce: 100
-  xVelocity: 1
+  xGoalVelocity: 1
+  xMaxForce: 1
   delayBeforeExitOnWin: 6
   delayBeforeExitOnLoose: 1
   stateReadOnly: none
