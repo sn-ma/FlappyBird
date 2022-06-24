@@ -4,15 +4,14 @@ namespace FlappyBirdClone.Player.FSM
 {
     public class WinnedState : DelayedTransitionState
     {
-        public WinnedState(IPlayerAPI playerApi) : base(playerApi, playerApi.delayBeforeExitOnWin)
+        public WinnedState(IPlayerApi playerApi) : base(playerApi, playerApi.delayBeforeExitOnWin)
         { }
 
         public override void OnEnter(State oldState)
         {
             base.OnEnter(oldState);
 
-            playerApi.rigidbody2d.rotation = 0f;
-            playerApi.rigidbody2d.velocity = new Vector2(playerApi.xVelocity, 0f);
+            PlayerApiUtils.CleanRotationAndVelocityOnFinish(playerApi);
 
             Camera.main.GetComponent<FollowXAxis>().enabled = false;
 

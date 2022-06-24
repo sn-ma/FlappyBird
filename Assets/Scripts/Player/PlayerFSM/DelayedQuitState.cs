@@ -7,7 +7,7 @@ namespace FlappyBirdClone.Player.FSM
     {
         private string sceneToLoad;
 
-        public DelayedQuitState(IPlayerAPI playerApi, float delay, string sceneToLoad) : base(playerApi, delay)
+        public DelayedQuitState(IPlayerApi playerApi, float delay, string sceneToLoad) : base(playerApi, delay)
         {
             this.sceneToLoad = sceneToLoad;
         }

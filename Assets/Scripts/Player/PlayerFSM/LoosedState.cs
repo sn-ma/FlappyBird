@@ -4,7 +4,7 @@ namespace FlappyBirdClone.Player.FSM
 {
     public class LoosedState : State
     {
-        public LoosedState(IPlayerAPI playerApi) : base(playerApi)
+        public LoosedState(IPlayerApi playerApi) : base(playerApi)
         { }
 
         public override void OnEnter(State oldState)
@@ -18,9 +18,9 @@ namespace FlappyBirdClone.Player.FSM
         {
             base.Update(isTapped, deltaTime);
 
-            playerApi.rigidbody2d.AddForce(new Vector2(0f, -playerApi.downForce * deltaTime));
+            PlayerApiUtils.ApplyGravity(playerApi, deltaTime);
 
-            if (playerApi.isCollidedWithGround && playerApi.rigidbody2d.velocity.sqrMagnitude < 0.001f)
+            if (playerApi.isCollidedWithGround && PlayerApiUtils.IsPlayerStopped(playerApi))
             {
                 playerApi.SwitchToState(new DelayedQuitState(playerApi, playerApi.delayBeforeExitOnLoose, null));
             }

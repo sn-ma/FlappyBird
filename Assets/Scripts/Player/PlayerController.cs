@@ -70,7 +70,7 @@ namespace FlappyBirdClone.Player
             }
         }
 
-        private class PlayerApiImpl : IPlayerAPI
+        private class PlayerApiImpl : IPlayerApi
         {
             private readonly PlayerController playerController;
 

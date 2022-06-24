@@ -4,7 +4,7 @@
     {
         private float timeLeft;
 
-        public DelayedTransitionState(IPlayerAPI playerApi, float delay) : base(playerApi)
+        public DelayedTransitionState(IPlayerApi playerApi, float delay) : base(playerApi)
         {
             timeLeft = delay;
         }

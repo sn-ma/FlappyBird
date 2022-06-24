@@ -2,9 +2,9 @@ namespace FlappyBirdClone.Player.FSM
 {
     public class State
     {
-        protected IPlayerAPI playerApi;
+        protected IPlayerApi playerApi;
 
-        public State(IPlayerAPI playerApi)
+        public State(IPlayerApi playerApi)
         {
             this.playerApi = playerApi;
         }
