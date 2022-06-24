@@ -25,8 +25,9 @@ public class PlayerController : MonoBehaviour
 
     private State state = null;
 
-    private bool isCollided = false;
-    private string triggeredWith = null;
+    private bool isCollidedWithObstacle = false;
+    private bool isCollidedWithGround = false;
+    private bool isFinishReached = false;
 
     private void Start()
     {
@@ -53,12 +54,31 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        triggeredWith = collision.tag;
+        switch (collision.tag)
+        {
+            case "Finish":
+                isFinishReached = true;
+                break;
+            default:
+                Debug.LogError($"Triggered by object with unexpected type: {collision.tag}");
+                break;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        isCollided = true;
+        switch (collision.gameObject.tag)
+        {
+            case "Obstacle":
+                isCollidedWithObstacle = true;
+                break;
+            case "Ground":
+                isCollidedWithGround = true;
+                break;
+            default:
+                Debug.LogError($"Triggered by object with unexpected type: {collision.gameObject.tag}");
+                break;
+        }
     }
 
     private void SwitchToState(State newState)
@@ -93,28 +113,18 @@ public class PlayerController : MonoBehaviour
 
         public override void Update(bool isTapped, float deltaTime)
         {
-            if (controller.isCollided)
+            base.Update(isTapped, deltaTime);
+
+            if (controller.isCollidedWithObstacle || controller.isCollidedWithGround)
             {
-                controller.rigidbody2d.velocity = Vector2.zero;
-                controller.rigidbody2d.angularVelocity = 0f;
                 controller.SwitchToState(new LoosedState(controller));
                 return;
             }
 
-            if (controller.triggeredWith != null)
+            if (controller.isFinishReached)
             {
-                switch (controller.triggeredWith)
-                {
-                    case "Obstacle":
-                        controller.SwitchToState(new LoosedState(controller));
-                        return;
-                    case "Finish":
-                        controller.SwitchToState(new WinnedState(controller));
-                        return;
-                    default:
-                        Debug.LogError($"Unexpected trigger tag: {controller.triggeredWith}");
-                        break;
-                }
+                controller.SwitchToState(new WinnedState(controller));
+                return;
             }
 
             if (isTapped)
@@ -133,23 +143,54 @@ public class PlayerController : MonoBehaviour
         public override void OnExit(State newState)
         {
             controller.animController.SetIsFlying(false);
+
+            base.OnExit(newState);
         }
     }
 
-    private class WinnedState : State
+    private abstract class DelayedTransitionState : State
     {
-        public WinnedState(PlayerController controller) : base(controller)
+        private float timeLeft;
+
+        public DelayedTransitionState(PlayerController controller, float delay) : base(controller)
+        {
+            timeLeft = delay;
+        }
+
+        public override void Update(bool isTapped, float deltaTime)
+        {
+            base.Update(isTapped, deltaTime);
+
+            timeLeft -= deltaTime;
+            if (timeLeft <= 0f)
+            {
+                MakeTransition();
+            }
+        }
+
+        protected abstract void MakeTransition();
+    }
+
+    private class WinnedState : DelayedTransitionState
+    {
+        public WinnedState(PlayerController controller) : base(controller, controller.delayBeforeExitOnWin)
         { }
 
         public override void OnEnter(State oldState)
         {
+            base.OnEnter(oldState);
+
             controller.rigidbody2d.rotation = 0f;
             controller.rigidbody2d.velocity = new Vector2(controller.xVelocity, 0f);
 
             Camera.main.GetComponent<FollowXAxis>().enabled = false;
-            controller.SwitchToState(new DelayAndQuitState(controller, controller.delayBeforeExitOnWin, null));
 
             controller.animController.SetIsFlying(true);
+        }
+
+        protected override void MakeTransition()
+        {
+            controller.SwitchToState(new DelayedQuitState(controller, 0f, null));
         }
     }
 
@@ -160,45 +201,48 @@ public class PlayerController : MonoBehaviour
 
         public override void OnEnter(State oldState)
         {
+            base.OnEnter(oldState);
+
             controller.animController.SetDead();
         }
 
         public override void Update(bool isTapped, float deltaTime)
         {
+            base.Update(isTapped, deltaTime);
+
             controller.rigidbody2d.AddForce(new Vector2(0f, -controller.downForce * deltaTime));
 
-            if (controller.isCollided)
+            if (controller.rigidbody2d.velocity.sqrMagnitude < 0.001f)
             {
-                controller.SwitchToState(new DelayAndQuitState(controller, controller.delayBeforeExitOnLoose, null));
+                controller.SwitchToState(new DelayedQuitState(controller, controller.delayBeforeExitOnLoose, null));
             }
         }
     }
 
-    private class DelayAndQuitState : State
+    private class DelayedQuitState : DelayedTransitionState
     {
-        private float timeLeft;
         private string sceneToLoad;
 
-        public DelayAndQuitState(PlayerController controller, float time, string sceneToLoad) : base(controller)
+        public DelayedQuitState(PlayerController controller, float delay, string sceneToLoad) : base(controller, delay)
         {
-            this.timeLeft = time;
             this.sceneToLoad = sceneToLoad;
         }
 
-        public override void Update(bool isTapped, float deltaTime)
+        public override void OnEnter(State oldState)
         {
-            timeLeft -= deltaTime;
-            if (timeLeft <= 0f)
+            base.OnEnter(oldState);
+        }
+
+        protected override void MakeTransition()
+        {
+            Debug.Log("Quiting");
+            if (sceneToLoad != null)
             {
-                Debug.Log("Quiting");
-                if (sceneToLoad != null)
-                {
-                    SceneManager.LoadScene(sceneToLoad);
-                }
-                else
-                {
-                    Application.Quit();
-                }
+                SceneManager.LoadScene(sceneToLoad);
+            }
+            else
+            {
+                Application.Quit();
             }
         }
     }
