@@ -1,7 +1,6 @@
 using FlappyBirdClone.Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace FlappyBirdClone
 {
@@ -21,6 +20,9 @@ namespace FlappyBirdClone
 
         [SerializeField]
         private PlayerController playerController;
+
+        [SerializeField]
+        private UnityEvent<float> onMove;
 
         private float currentVelocity = 0f;
 
@@ -64,6 +66,7 @@ namespace FlappyBirdClone
                 }
                 position.x += currentVelocity * Time.deltaTime;
             }
+            onMove?.Invoke(position.x - transform.position.x);
             transform.position = position;
         }
     }

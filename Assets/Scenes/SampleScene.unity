@@ -311,6 +311,21 @@ MonoBehaviour:
   useAcceleration: 1
   maxAcceleration: 5
   playerController: {fileID: 161720130}
+  onMove:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 592152411}
+        m_TargetAssemblyTypeName: FlappyBirdClone.BackgroundMove, Assembly-CSharp
+        m_MethodName: OnCameraMoved
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &566002983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -381,6 +396,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5671055877889286481, guid: 8447d8a22ccacd949bf0441c439ce067, type: 3}
   m_PrefabInstance: {fileID: 566002983}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &592152411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2023985006840743692, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+  m_PrefabInstance: {fileID: 2023985006249902167}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8f325e02b2d32488334442305f662b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &826340808
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +900,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c6c0567c7422a14d9d250bb1f5fc1d2, type: 3}
+--- !u!1001 &2023985006249902167
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.4312
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023985006840743695, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
+      propertyPath: m_Name
+      value: Background
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
 --- !u!1001 &5671055878881324705
 PrefabInstance:
   m_ObjectHideFlags: 0
