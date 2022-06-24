@@ -40,7 +40,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         state.Update(Input.touchCount > 0, Time.deltaTime);
-        SetRotationByVelocity();
     }
 
     private void SetRotationByVelocity()
@@ -138,6 +137,8 @@ public class PlayerController : MonoBehaviour
                 controller.animController.SetIsFlying(false);
             }
             controller.rigidbody2d.velocity = new Vector2(controller.xVelocity, controller.rigidbody2d.velocity.y);
+
+            controller.SetRotationByVelocity();
         }
 
         public override void OnExit(State newState)
