@@ -34,7 +34,7 @@ namespace FlappyBirdClone
 
         void Update()
         {
-            while (player.position.x > scorePositions.First.Value)
+            while (scorePositions.Count > 0 && player.position.x > scorePositions.First.Value)
             {
                 IncScore();
                 scorePositions.RemoveFirst();
@@ -45,7 +45,6 @@ namespace FlappyBirdClone
         {
             ++score;
             onScoreChanged?.Invoke(score);
-            Debug.Log($"Score: {score}");
         }
 
         public void ResetScore()
