@@ -11,7 +11,7 @@ namespace FlappyBirdClone.Player
         [SerializeField]
         private float downForce;
         [SerializeField]
-        private float xVelocity;
+        public float xVelocity;
         [SerializeField]
         private float delayBeforeExitOnWin;
         [SerializeField]
