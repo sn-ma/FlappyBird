@@ -156,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5671055877889286481, guid: 8447d8a22ccacd949bf0441c439ce067, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5671055877889286481, guid: 8447d8a22ccacd949bf0441c439ce067, type: 3}
       propertyPath: m_LocalPosition.x
@@ -343,7 +343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5671055877889286481, guid: 8447d8a22ccacd949bf0441c439ce067, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5671055877889286481, guid: 8447d8a22ccacd949bf0441c439ce067, type: 3}
       propertyPath: m_LocalPosition.x
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 826340811}
   - component: {fileID: 826340810}
   m_Layer: 0
-  m_Name: SkyObstacle
+  m_Name: Sky
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,12 +433,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826340808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9207, y: 1.7189999, z: 0}
+  m_LocalPosition: {x: 4.8721, y: 5.29, z: 0}
   m_LocalScale: {x: 26.841448, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2130939642}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &826340810
 BoxCollider2D:
@@ -601,7 +601,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1058087366
 BoxCollider2D:
@@ -647,7 +647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5671055877889286481, guid: 8447d8a22ccacd949bf0441c439ce067, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5671055877889286481, guid: 8447d8a22ccacd949bf0441c439ce067, type: 3}
       propertyPath: m_LocalPosition.x
@@ -805,7 +805,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2130939641
 GameObject:
@@ -816,8 +816,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2130939642}
+  - component: {fileID: 2130939643}
   m_Layer: 0
-  m_Name: Obstacles
+  m_Name: ObstaclesScored
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -835,7 +836,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 826340809}
   - {fileID: 566002984}
   - {fileID: 261281561}
   - {fileID: 1540369243}
@@ -843,6 +843,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2130939643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130939641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3def171e100b4d34aa326896d445b9fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onScoreChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  player: {fileID: 161720129}
 --- !u!1001 &210337753405159181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -856,7 +872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 210337755296697987, guid: 0c6c0567c7422a14d9d250bb1f5fc1d2, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 210337755296697987, guid: 0c6c0567c7422a14d9d250bb1f5fc1d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -909,7 +925,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2023985006840743693, guid: e7a8b16d968050543ba0bfe51f692a20, type: 3}
       propertyPath: m_LocalPosition.x
@@ -974,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5671055877889286481, guid: 8447d8a22ccacd949bf0441c439ce067, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5671055877889286481, guid: 8447d8a22ccacd949bf0441c439ce067, type: 3}
       propertyPath: m_LocalPosition.x
