@@ -4,6 +4,8 @@ namespace FlappyBirdClone.Player.FSM
 {
     public class LoosedState : State
     {
+        private bool wasPlayerStoppedOnThePrevFrame = false;
+
         public LoosedState(IPlayerApi playerApi) : base(playerApi)
         { }
 
@@ -20,10 +22,13 @@ namespace FlappyBirdClone.Player.FSM
 
             PlayerApiUtils.ApplyGravity(playerApi, deltaTime);
 
-            if (playerApi.isCollidedWithGround && PlayerApiUtils.IsPlayerStopped(playerApi))
+            bool isPlayerStopped = PlayerApiUtils.IsPlayerStopped(playerApi);
+
+            if (isPlayerStopped && (wasPlayerStoppedOnThePrevFrame || playerApi.isCollidedWithGround))
             {
                 playerApi.SwitchToState(new DelayedQuitState(playerApi, playerApi.delayBeforeExitOnLoose, null));
             }
+            wasPlayerStoppedOnThePrevFrame = isPlayerStopped;
         }
     }
 }
