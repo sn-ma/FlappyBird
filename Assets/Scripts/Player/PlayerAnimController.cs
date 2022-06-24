@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
-public class PlayerAnimController : MonoBehaviour
+namespace FlappyBirdClone.Player
 {
-    private Animator animator;
-
-    void Start()
+    [RequireComponent(typeof(Animator))]
+    public class PlayerAnimController : MonoBehaviour
     {
-        animator = GetComponent<Animator>();
-    }
+        private Animator animator;
 
-    public void SetIsFlying(bool isFlying)
-    {
-        animator.SetBool("isFlying", isFlying);
-    }
+        void Start()
+        {
+            animator = GetComponent<Animator>();
+        }
 
-    public void SetDead()
-    {
-        animator.SetTrigger("die");
+        public void SetIsFlying(bool isFlying)
+        {
+            animator.SetBool("isFlying", isFlying);
+        }
+
+        public void SetDead()
+        {
+            animator.SetTrigger("die");
+        }
     }
 }
