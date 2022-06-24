@@ -20,7 +20,7 @@ namespace FlappyBirdClone.Player.FSM
 
             playerApi.rigidbody2d.AddForce(new Vector2(0f, -playerApi.downForce * deltaTime));
 
-            if (playerApi.rigidbody2d.velocity.sqrMagnitude < 0.001f)
+            if (playerApi.isCollidedWithGround && playerApi.rigidbody2d.velocity.sqrMagnitude < 0.001f)
             {
                 playerApi.SwitchToState(new DelayedQuitState(playerApi, playerApi.delayBeforeExitOnLoose, null));
             }
