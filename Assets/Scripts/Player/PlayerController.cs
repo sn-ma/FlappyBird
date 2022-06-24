@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
+[RequireComponent(typeof(Rigidbody2D), typeof(PlayerAnimController))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
 
     private Rigidbody2D rigidbody2d;
-    private Animator animator;
+    private PlayerAnimController animController;
 
     private State state = null;
 
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animController = GetComponent<PlayerAnimController>();
         SwitchToState(new PlayingState(this));
     }
 
@@ -120,19 +120,19 @@ public class PlayerController : MonoBehaviour
             if (isTapped)
             {
                 controller.rigidbody2d.AddForce(new Vector2(0f, controller.upForce * deltaTime));
-                controller.animator.SetBool("isFlying", true);
+                controller.animController.SetIsFlying(true);
             }
             else
             {
                 controller.rigidbody2d.AddForce(new Vector2(0f, -controller.downForce * deltaTime));
-                controller.animator.SetBool("isFlying", false);
+                controller.animController.SetIsFlying(false);
             }
             controller.rigidbody2d.velocity = new Vector2(controller.xVelocity, controller.rigidbody2d.velocity.y);
         }
 
         public override void OnExit(State newState)
         {
-            controller.animator.SetBool("isFlying", false);
+            controller.animController.SetIsFlying(false);
         }
     }
 
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
             Camera.main.GetComponent<FollowXAxis>().enabled = false;
             controller.SwitchToState(new DelayAndQuitState(controller, controller.delayBeforeExitOnWin, null));
 
-            controller.animator.SetBool("isFlying", true);
+            controller.animController.SetIsFlying(true);
         }
     }
 
@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
 
         public override void OnEnter(State oldState)
         {
-            controller.animator.SetTrigger("die");
+            controller.animController.SetDead();
         }
 
         public override void Update(bool isTapped, float deltaTime)
