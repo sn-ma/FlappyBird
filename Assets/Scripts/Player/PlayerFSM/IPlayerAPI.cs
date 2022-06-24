@@ -15,6 +15,7 @@ namespace FlappyBirdClone.Player.FSM
         public float delayBeforeExitOnLoose { get; }
         public Rigidbody2D rigidbody2d { get; }
         public PlayerAnimController animController { get; }
+        public GameEffects gameEffects { get; }
 
         public void SwitchToState(State newState);
     }

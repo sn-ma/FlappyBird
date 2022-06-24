@@ -16,6 +16,7 @@ namespace FlappyBirdClone.Player.FSM
             Camera.main.GetComponent<FollowXAxis>().enabled = false;
 
             playerApi.animController.SetIsFlying(true);
+            playerApi.gameEffects.Win();
         }
 
         protected override void MakeTransition()

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace FlappyBirdClone.Player
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(PlayerAnimController))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(PlayerAnimController), typeof(GameEffects))]
     public class PlayerController : MonoBehaviour
     {
         [SerializeField]
@@ -25,6 +25,7 @@ namespace FlappyBirdClone.Player
 
         private Rigidbody2D rigidbody2d;
         private PlayerAnimController animController;
+        private GameEffects gameMode;
         private PlayerApiImpl playerApi;
 
         private State state = null;
@@ -33,6 +34,7 @@ namespace FlappyBirdClone.Player
         {
             rigidbody2d = GetComponent<Rigidbody2D>();
             animController = GetComponent<PlayerAnimController>();
+            gameMode = GetComponent<GameEffects>();
             playerApi = new PlayerApiImpl(this);
             playerApi.SwitchToState(new PlayingState(playerApi));
         }
@@ -95,6 +97,7 @@ namespace FlappyBirdClone.Player
             public float delayBeforeExitOnLoose { get => playerController.delayBeforeExitOnLoose; }
             public Rigidbody2D rigidbody2d { get => playerController.rigidbody2d; }
             public PlayerAnimController animController { get => playerController.animController; }
+            public GameEffects gameEffects { get => playerController.gameMode; }
 
             public void SwitchToState(State newState)
             {

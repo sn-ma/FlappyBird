@@ -14,6 +14,8 @@ namespace FlappyBirdClone.Player.FSM
             base.OnEnter(oldState);
 
             playerApi.animController.SetDead();
+
+            playerApi.gameEffects.GameOver();
         }
 
         public override void Update(bool isTapped, float deltaTime)
