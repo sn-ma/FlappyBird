@@ -170,7 +170,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ButtonSound
+      name: ButtonSoundOn
       rect:
         serializedVersion: 2
         x: 64
@@ -232,6 +232,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ButtonSoundOff
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d197baf0ebbf54db929796ae153d9d
+      internalID: -181716837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -246,8 +267,9 @@ TextureImporter:
       ButtonPause: -456328422
       ButtonRestart: 1889061506
       ButtonPlay: -2039804799
+      ButtonSoundOn: -1986044379
       ButtonExit: -51963553
-      ButtonSound: -1986044379
+      ButtonSoundOff: -181716837
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

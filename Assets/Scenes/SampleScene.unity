@@ -222,9 +222,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1822213425}
-        m_TargetAssemblyTypeName: FlappyBirdClone.MenuController, Assembly-CSharp
-        m_MethodName: SwitchSound
+      - m_Target: {fileID: 1822213426}
+        m_TargetAssemblyTypeName: FlappyBirdClone.SoundSwitcher, Assembly-CSharp
+        m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2028,9 +2028,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1822213425}
-        m_TargetAssemblyTypeName: FlappyBirdClone.MenuController, Assembly-CSharp
-        m_MethodName: SwitchSound
+      - m_Target: {fileID: 1822213426}
+        m_TargetAssemblyTypeName: FlappyBirdClone.SoundSwitcher, Assembly-CSharp
+        m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2103,6 +2103,7 @@ GameObject:
   - component: {fileID: 1822213422}
   - component: {fileID: 1822213421}
   - component: {fileID: 1822213425}
+  - component: {fileID: 1822213426}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2212,6 +2213,72 @@ MonoBehaviour:
   - {fileID: 815266843}
   - {fileID: 933154441}
   - {fileID: 2016699400}
+--- !u!114 &1822213426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822213420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742ff8ea8e09e9e41bc35a0406f194b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSoundSwitchedOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1696462269}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -1986044379, guid: f3f1c60b11ebb7345880fb3ae9ca90e5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 238590177}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -1986044379, guid: f3f1c60b11ebb7345880fb3ae9ca90e5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSoundSwitchedOff:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1696462269}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -181716837, guid: f3f1c60b11ebb7345880fb3ae9ca90e5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 238590177}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -181716837, guid: f3f1c60b11ebb7345880fb3ae9ca90e5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2012275047
 GameObject:
   m_ObjectHideFlags: 0

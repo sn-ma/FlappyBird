@@ -31,11 +31,6 @@ namespace FlappyBirdClone
             Debug.Log("Unpausing");
         }
 
-        public void SwitchSound()
-        {
-            AudioListener.pause = !AudioListener.pause;
-        }
-
         public void RestartLevel()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
