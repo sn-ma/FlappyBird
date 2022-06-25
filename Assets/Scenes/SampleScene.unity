@@ -2631,8 +2631,12 @@ MonoBehaviour:
     horizontalDistanceLimits: {x: 0, y: 0}
   - count: 100
     verticalDistanceLimits: {x: 2, y: 4}
-    verticalShiftLimits: {x: -3.5, y: 3.5}
+    verticalShiftLimits: {x: -2.5, y: 2.5}
     horizontalDistanceLimits: {x: 3, y: 6}
+  - count: 100
+    verticalDistanceLimits: {x: 1.7, y: 2.5}
+    verticalShiftLimits: {x: -3, y: 3}
+    horizontalDistanceLimits: {x: 2.5, y: 4}
   onGenerationFinished:
     m_PersistentCalls:
       m_Calls:
