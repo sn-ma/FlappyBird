@@ -21,7 +21,7 @@ namespace FlappyBirdClone.Player.FSM
 
         protected override void MakeTransition()
         {
-            playerApi.SwitchToState(new DelayedQuitState(playerApi, 0f, null));
+            playerApi.SwitchToState(new GoToEogMenuState(playerApi, 0f));
         }
     }
 }

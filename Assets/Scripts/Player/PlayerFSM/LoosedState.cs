@@ -28,7 +28,7 @@ namespace FlappyBirdClone.Player.FSM
 
             if (isPlayerStopped && (wasPlayerStoppedOnThePrevFrame || playerApi.isCollidedWithGround))
             {
-                playerApi.SwitchToState(new DelayedQuitState(playerApi, playerApi.delayBeforeExitOnLoose, null));
+                playerApi.SwitchToState(new GoToEogMenuState(playerApi, playerApi.delayBeforeExitOnLoose));
             }
             wasPlayerStoppedOnThePrevFrame = isPlayerStopped;
         }

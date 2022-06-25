@@ -18,5 +18,7 @@ namespace FlappyBirdClone.Player.FSM
         public GameEffects gameEffects { get; }
 
         public void SwitchToState(State newState);
+
+        public void GoToEogMenu();
     }
 }

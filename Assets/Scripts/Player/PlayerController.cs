@@ -18,6 +18,8 @@ namespace FlappyBirdClone.Player
         private float delayBeforeExitOnWin;
         [SerializeField]
         private float delayBeforeExitOnLoose;
+        [SerializeField]
+        private MenuController menuController;
 
         [SerializeField]
         private string stateReadOnly = "none";
@@ -107,6 +109,12 @@ namespace FlappyBirdClone.Player
                 oldState?.OnExit(newState);
                 playerController.state = newState;
                 newState.OnEnter(oldState);
+            }
+
+            public void GoToEogMenu()
+            {
+                playerController.menuController.Pause();
+                playerController.menuController.ShowMenuPage(2);
             }
         }
     }

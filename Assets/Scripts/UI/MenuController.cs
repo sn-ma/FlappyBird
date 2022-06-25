@@ -22,11 +22,13 @@ namespace FlappyBirdClone
         public void Pause()
         {
             Time.timeScale = 0f;
+            Debug.Log("Pausing");
         }
 
         public void Unpause()
         {
             Time.timeScale = 1f;
+            Debug.Log("Unpausing");
         }
 
         public void SwitchSound()
