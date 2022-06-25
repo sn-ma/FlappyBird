@@ -6,6 +6,9 @@ namespace FlappyBirdClone
     public class MenuController : MonoBehaviour
     {
         [SerializeField]
+        private GameObject buttonClickSound;
+
+        [SerializeField]
         private GameObject[] pages;
 
         public void ShowMenuPage(int selectIndex)
@@ -34,6 +37,14 @@ namespace FlappyBirdClone
         public void RestartLevel()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        public void PlayButtonClickSound()
+        {
+            if (buttonClickSound != null)
+            {
+                Instantiate(buttonClickSound, transform.position, Quaternion.identity, null);
+            }
         }
     }
 }
