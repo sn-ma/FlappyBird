@@ -44,7 +44,10 @@ namespace FlappyBirdClone.Player
 
         void Update()
         {
-            state.Update(Input.touchCount > 0, Time.deltaTime);
+            if (Time.deltaTime > 0.00000000001f)
+            {
+                state.Update(Input.touchCount > 0, Time.deltaTime);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
