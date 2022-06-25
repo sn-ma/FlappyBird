@@ -8,6 +8,9 @@ namespace FlappyBirdClone
     public class ScoreCounter : MonoBehaviour
     {
         [SerializeField]
+        private bool calculateOnStartup = false;
+
+        [SerializeField]
         private UnityEvent<int> onScoreChanged;
 
         [SerializeField]
@@ -17,7 +20,15 @@ namespace FlappyBirdClone
 
         private LinkedList<float> scorePositions = new LinkedList<float>();
 
-        void Start()
+        private void Start()
+        {
+            if (calculateOnStartup)
+            {
+                RecalculateScorePositions();
+            }
+        }
+
+        public void RecalculateScorePositions()
         {
             ScoreMarker[] markers = GetComponentsInChildren<ScoreMarker>();
             List<float> temp = new List<float>(markers.Length);
