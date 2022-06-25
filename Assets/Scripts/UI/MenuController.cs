@@ -48,5 +48,10 @@ namespace FlappyBirdClone
                 Instantiate(buttonClickSound, transform.position, Quaternion.identity, null);
             }
         }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }
