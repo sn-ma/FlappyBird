@@ -1,4 +1,3 @@
-using FlappyBirdClone.Player.FSM;
 using UnityEngine;
 
 namespace FlappyBirdClone.Player.FSM

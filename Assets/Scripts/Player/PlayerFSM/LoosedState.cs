@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace FlappyBirdClone.Player.FSM
+﻿namespace FlappyBirdClone.Player.FSM
 {
     public class LoosedState : State
     {
