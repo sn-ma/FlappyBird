@@ -2629,6 +2629,10 @@ MonoBehaviour:
     verticalDistanceLimits: {x: 0, y: 0}
     verticalShiftLimits: {x: 0, y: 0}
     horizontalDistanceLimits: {x: 0, y: 0}
+  - count: 15
+    verticalDistanceLimits: {x: 3, y: 4}
+    verticalShiftLimits: {x: -2, y: 2}
+    horizontalDistanceLimits: {x: 4, y: 6}
   - count: 100
     verticalDistanceLimits: {x: 2, y: 4}
     verticalShiftLimits: {x: -2.5, y: 2.5}
