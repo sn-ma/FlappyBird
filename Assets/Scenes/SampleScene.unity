@@ -980,6 +980,7 @@ GameObject:
   - component: {fileID: 826340809}
   - component: {fileID: 826340811}
   - component: {fileID: 826340810}
+  - component: {fileID: 826340812}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Obstacle
@@ -995,8 +996,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826340808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.9406, y: 5.29, z: 0}
-  m_LocalScale: {x: 42.531345, y: 1, z: 1}
+  m_LocalPosition: {x: 3.6094, y: 5.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1019,14 +1020,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 26.583174, y: 2}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 26.58317, y: 1.5}
   m_EdgeRadius: 0
 --- !u!212 &826340811
 SpriteRenderer:
@@ -1069,17 +1070,29 @@ SpriteRenderer:
   m_SortingLayerID: -1849076849
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.13679248, g: 1, b: 0.20165554, a: 1}
+  m_Sprite: {fileID: 416418139, guid: 314e65ac919f1a046bd3d1e441b54af4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 2
+  m_Size: {x: 26.583174, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &826340812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826340808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761cda459f44bfa418ee34895a467ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &933154441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,6 +1170,7 @@ GameObject:
   - component: {fileID: 1058087365}
   - component: {fileID: 1058087364}
   - component: {fileID: 1058087366}
+  - component: {fileID: 1058087367}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -1205,12 +1219,12 @@ SpriteRenderer:
   m_SortingLayerID: -1849076849
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6698113, g: 0.42473894, b: 0, a: 1}
+  m_Sprite: {fileID: 433715313, guid: 314e65ac919f1a046bd3d1e441b54af4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 2
+  m_Size: {x: 26.583174, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1224,8 +1238,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058087363}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.9122, y: -5.3499994, z: 0}
-  m_LocalScale: {x: 42.568474, y: 1, z: 1}
+  m_LocalPosition: {x: 3.6094, y: -4.8966, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1248,15 +1262,27 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 26.583174, y: 2}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 26.58317, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &1058087367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058087363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761cda459f44bfa418ee34895a467ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1375704318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,8 +1865,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288035192
+  m_fontColor: {r: 0.47058824, g: 0.22352941, b: 0.5882353, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2454,7 +2480,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294160606
-  m_fontColor: {r: 0.87058824, g: 0.6901961, b: 0.9529412, a: 1}
+  m_fontColor: {r: 0.47058824, g: 0.22352941, b: 0.5882353, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2605,8 +2631,8 @@ MonoBehaviour:
     horizontalDistanceLimits: {x: 0, y: 0}
   - count: 100
     verticalDistanceLimits: {x: 2, y: 4}
-    verticalShiftLimits: {x: -1, y: 1}
-    horizontalDistanceLimits: {x: 4, y: 6}
+    verticalShiftLimits: {x: -3.5, y: 3.5}
+    horizontalDistanceLimits: {x: 3, y: 6}
   onGenerationFinished:
     m_PersistentCalls:
       m_Calls:
