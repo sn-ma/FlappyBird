@@ -118,7 +118,7 @@ namespace FlappyBirdClone.Player
             public void GoToEogMenu()
             {
                 playerController.menuController.Pause();
-                playerController.menuController.ShowMenuPage(2);
+                playerController.menuController.ShowMenuPage("GameFinished");
             }
         }
     }

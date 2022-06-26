@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,13 +11,32 @@ namespace FlappyBirdClone.UI
         private GameObject buttonClickSound;
 
         [SerializeField]
-        private GameObject[] pages;
+        private List<MenuPageDescr> pages;
 
-        public void ShowMenuPage(int selectIndex)
+        private static bool wasLoaded = false;
+
+        private void Start()
         {
-            for (int i = 0; i < pages.Length; ++i)
+            if (!wasLoaded)
             {
-                pages[i].SetActive(i == selectIndex);
+                Pause();
+                ShowMenuPage("BeforeGame");
+                wasLoaded = true;
+            }
+        }
+
+        [Serializable]
+        public struct MenuPageDescr
+        {
+            public string name;
+            public GameObject pageObject;
+        }
+
+        public void ShowMenuPage(string name)
+        {
+            foreach (MenuPageDescr page in pages)
+            {
+                page.pageObject.SetActive(page.name == name);
             }
         }
 
