@@ -1,18 +1,21 @@
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
-public class ScoreTextUpdater : MonoBehaviour
+namespace FlappyBirdClone.UI
 {
-    private TextMeshProUGUI text;
-
-    private void Start()
+    [RequireComponent(typeof(TextMeshProUGUI))]
+    public class ScoreTextUpdater : MonoBehaviour
     {
-        text = GetComponent<TextMeshProUGUI>();
-    }
+        private TextMeshProUGUI text;
 
-    public void SetScore(int score)
-    {
-        text.text = score.ToString();
+        private void Start()
+        {
+            text = GetComponent<TextMeshProUGUI>();
+        }
+
+        public void SetScore(int score)
+        {
+            text.text = score.ToString();
+        }
     }
 }

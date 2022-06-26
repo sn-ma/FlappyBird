@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace FlappyBirdClone
+namespace FlappyBirdClone.UI
 {
     public class MenuController : MonoBehaviour
     {

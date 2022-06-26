@@ -1,54 +1,32 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace FlappyBirdClone
 {
     public class SoundSwitcher : MonoBehaviour
     {
-        [SerializeField]
-        private UnityEvent onSoundSwitchedOn;
+        public event Action<bool> onSoundSwithced;
 
-        [SerializeField]
-        private UnityEvent onSoundSwitchedOff;
+        public bool IsSoundSwitchedOn
+        {
+            get => isSoundSwitchedOn;
+            set
+            {
+                isSoundSwitchedOn = value;
+                AudioListener.pause = !isSoundSwitchedOn;
+                PlayerPrefs.SetInt(prefName, isSoundSwitchedOn ? 1 : 0);
+                onSoundSwithced?.Invoke(isSoundSwitchedOn);
+            }
+        }
+
+        private bool isSoundSwitchedOn;
 
         private const string prefName = "soundOn";
 
         void Start()
         {
             bool soundShouldBeOn = PlayerPrefs.GetInt(prefName, 1) != 0;
-            if (soundShouldBeOn)
-            {
-                SwitchOn();
-            }
-            else
-            {
-                SwitchOff();
-            }
-        }
-
-        public void SwitchOn()
-        {
-            AudioListener.pause = false;
-            PlayerPrefs.SetInt(prefName, 1);
-            onSoundSwitchedOn?.Invoke();
-        }
-
-        public void SwitchOff()
-        {
-            AudioListener.pause = true;
-            PlayerPrefs.SetInt(prefName, 0);
-            onSoundSwitchedOff?.Invoke();
-        }
-
-        public void Toggle()
-        {
-            if (AudioListener.pause)
-            {
-                SwitchOn();
-            } else
-            {
-                SwitchOff();
-            }
+            IsSoundSwitchedOn = soundShouldBeOn;
         }
     }
 }
