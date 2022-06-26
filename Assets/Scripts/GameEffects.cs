@@ -10,18 +10,29 @@ namespace FlappyBirdClone
         [SerializeField]
         private GameObject winEffect;
 
-        public void GameOver()
+        [SerializeField]
+        private GameObject scoreIncEffect;
+
+        [SerializeField]
+        private GameObject wingsEffectInstance;
+
+        public void GameOver() => PlayEffectIfAny(gameOverEffect);
+        public void Win() => PlayEffectIfAny(winEffect);
+        public void ScoreInc() => PlayEffectIfAny(scoreIncEffect);
+        public void WingsEffectOn()
         {
-            if (gameOverEffect != null)
-            {
-                Instantiate(gameOverEffect, transform.position, Quaternion.identity, null);
-            }
+            wingsEffectInstance.SetActive(true);
         }
-        public void Win()
+        public void WingsEffectOff()
         {
-            if (winEffect != null)
+            wingsEffectInstance.SetActive(false);
+        }
+
+        private void PlayEffectIfAny(GameObject effect)
+        {
+            if (effect != null)
             {
-                Instantiate(winEffect, transform.position, Quaternion.identity, null);
+                Instantiate(effect, transform.position, Quaternion.identity, null);
             }
         }
     }

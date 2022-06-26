@@ -25,11 +25,13 @@
             {
                 PlayerApiUtils.ApplyUpAcceleration(playerApi, deltaTime);
                 playerApi.animController.SetIsFlying(true);
+                playerApi.gameEffects.WingsEffectOn();
             }
             else
             {
                 PlayerApiUtils.ApplyGravity(playerApi, deltaTime);
                 playerApi.animController.SetIsFlying(false);
+                playerApi.gameEffects.WingsEffectOff();
             }
             PlayerApiUtils.AccelerateToGoalXVelocity(playerApi, deltaTime);
 
