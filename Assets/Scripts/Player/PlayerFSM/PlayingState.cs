@@ -41,6 +41,7 @@
         public override void OnExit(State newState)
         {
             playerApi.animController.SetIsFlying(false);
+            playerApi.gameEffects.WingsEffectOff();
 
             base.OnExit(newState);
         }
