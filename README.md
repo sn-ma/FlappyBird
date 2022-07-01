@@ -9,7 +9,7 @@ You may download an Android executable on [itch.io](https://snma.itch.io/flappyb
 
 
   <div width="100" style="display: inline-block;">
-    <img src="https://github.com/sn-ma/FlappyBird/blob/0cc028ed27c776471fa213bf576ae77fa0d9eee5/Screenshots/Play1.jpg">
+    <img width="100" src="https://github.com/sn-ma/FlappyBird/blob/0cc028ed27c776471fa213bf576ae77fa0d9eee5/Screenshots/Play1.jpg">
   </div>
 
 <div>
