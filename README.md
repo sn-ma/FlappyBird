@@ -1,5 +1,5 @@
-# Flappy Bird clone
+![Banner image](Screenshots/banner.png)
 
-![Banner image](./Screenshots/banner.png)
+# Flappy Bird clone
 
 You may download an Android executable on [itch.io](https://snma.itch.io/flappybird-clone).
