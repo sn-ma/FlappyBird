@@ -11,4 +11,5 @@ You may download an Android executable on [itch.io](https://snma.itch.io/flappyb
     <img width="20%" src="https://github.com/sn-ma/FlappyBird/blob/0cc028ed27c776471fa213bf576ae77fa0d9eee5/Screenshots/Play2.jpg">
     <img width="20%" src="https://github.com/sn-ma/FlappyBird/blob/0cc028ed27c776471fa213bf576ae77fa0d9eee5/Screenshots/Pause1.jpg">
     <img width="20%" src="https://github.com/sn-ma/FlappyBird/blob/0cc028ed27c776471fa213bf576ae77fa0d9eee5/Screenshots/Dead1.jpg">
+    <img width="20%" src="https://github.com/sn-ma/FlappyBird/blob/0cc028ed27c776471fa213bf576ae77fa0d9eee5/Screenshots/Dead2.jpg">
 </div>
