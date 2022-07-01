@@ -4,4 +4,4 @@
 
 You may download an Android executable on [itch.io](https://snma.itch.io/flappybird-clone).
 
-![Gameplay screenshot](Screenshots/play_1.png)
+![Gameplay screenshot](Screenshots/play_1.jpg)
