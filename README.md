@@ -1,4 +1,4 @@
-![](/../Screenshots/banner.png?raw=true)
+![](/Screenshots/banner.png)
 
 # Flappy Bird clone
 
