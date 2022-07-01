@@ -1,6 +1,6 @@
-![Banner image](Screenshots/banner.png)
+![Banner image](Screenshots/Banner.jpg)
 # Flappy Bird clone
 
 You may download an Android executable on [itch.io](https://snma.itch.io/flappybird-clone).
 
-![Gameplay screenshot](Screenshots/play_1.jpg)
+![Gameplay screenshot](Screenshots/Play1.jpg)
