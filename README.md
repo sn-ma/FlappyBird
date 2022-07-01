@@ -1,4 +1,4 @@
-![](Screenshots/banner.png)
+![](https://github.com/sn-ma/FlappyBird/blob/main/Screenshots/banner.png)
 
 # Flappy Bird clone
 
