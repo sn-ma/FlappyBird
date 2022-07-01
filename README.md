@@ -1,4 +1,4 @@
-![Banner image](Screenshots/banner.png)
+![Banner image](Screenshots/banner.png?raw=true)
 
 # Flappy Bird clone
 
