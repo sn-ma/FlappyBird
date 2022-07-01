@@ -1,5 +1,5 @@
 ![Banner image](Screenshots/Banner.jpg)
-# Flappy Bird clone
+# Flappy Bird clone for Android
 
 It is build using Unity 3d game engine.
 
